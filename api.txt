@@ -1,0 +1,26 @@
+gameInfo(dict){
+  cardInfo; ,
+  locationInfo: ,
+  energy , 
+  turn
+}
+
+
+cardInfo(dict){
+  "card(dict)" : {
+    "cardname" : {location: [int x, int y], },
+    ....
+    "cardname" : {}
+  },
+  "location" : {??}
+
+}
+
+locationInfo[location[int x, int y] *3]
+
+energy(int)
+
+turn(int)
+
+
+
