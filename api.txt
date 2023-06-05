@@ -6,7 +6,7 @@ gameInfo(dict){
 }
 
 
-"card(dict)" : {
+"cardInfo(dict)" : {
   "cardname" : {location: [int x, int y], },
   ....
   "cardname" : {}
