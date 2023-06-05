@@ -23,16 +23,18 @@ for filename in os.listdir(folder_path):
 
 
 gameInfo = {
-    'cardInfo': {},
-    # "cardInfo(dict)" : {
-    #     "cardname" : {'location': [int x, int y], },
+    'cardInfo': [],
+    # "cardInfo(array)" : [
+    #     {"name" : "quicksilver",
+    #        },
+    #     
     #     ....
-    #     "cardname" : {}
-    # }
+    #     {}
+    # ]
     'locationInfo': [
-        [locationArea[0], locationArea[3]],
-        [locationArea[1], locationArea[3]],
-        [locationArea[2], locationArea[3]],
+        {'pos' : [locationArea[0], locationArea[3]], 'name' : ''},
+        {'pos' : [locationArea[1], locationArea[3]], 'name' : ''},
+        {'pos' : [locationArea[2], locationArea[3]], 'name' : ''}
     ],
     # locationInfo[location[int x, int y] *3]
     'energy': 0,
@@ -64,7 +66,7 @@ while True:
         location = matches_location(content[0], kp_screenshot, good_matches)
 
         # add card info
-        gameInfo['cardInfo'][name]['location'] = location
+        
         
 
         draw_point(overlay, location)

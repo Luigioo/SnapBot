@@ -1,13 +1,15 @@
 import os
 import time
 
-def follow_file(file_path):
+from helper import *
+
+def follow_file(file_path, gameInfo):
     with open(file_path, 'r') as file:
         # Move the file pointer to the end
-        file.seek(0, os.SEEK_END)
+        # file.seek(0, os.SEEK_END)
         
-        log_file = open('ignore/log.txt', 'w')
-
+        log = open('log.txt', 'w')
+        extract_log = open('extract_log.txt', 'w')
         while True:
             # Check for any new data in the file
             line = file.readline()
@@ -17,15 +19,62 @@ def follow_file(file_path):
                 continue
             
             # Process the new line of data
-            log_file.write("Log message\n")
-            log_file.close()
+            line = line.strip()
+            log.write(line+"\n")
 
-            print(line.strip())  # Replace with your own processing logic
+            processed = line_process(line, gameInfo)
+            if(processed):
+                extract_log.write(processed+"\n")
+                print(processed)  # Replace with your own processing logic
+
             
+        extract_log.close()
+        log.close()
+            
+def line_process(line, gameInfo):
+    if(line.startswith("GameManager|OnStartGameScene")) : return line
+    if(line.startswith("EndTurn|Turn=")) : 
+        return line.replace("EndTurn|Turn=", "")
+    if(line.startswith("CreateCustomActionAsync|LoadVfxDef|Start|LocationVfxDefs/") and line.endswith("RevealLocation")) : 
+        return line.replace("CreateCustomActionAsync|LoadVfxDef|Start|LocationVfxDefs/", "").replace(".asset|RevealLocation", "")
+    if(line.endswith("|DrawCard") and line.startswith("CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/") ) : 
+        return line.replace("CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/", "").replace(".asset|DrawCard", "")
+    
+    if(line.startswith("CreateCustomActionAsync|LoadVfxDef|Start|")) : return line
+
+    return False
+
+    if(line.startswith("AvatarView")) : return False
+    if(line.startswith("Found card back material in cache")) : return False
+    return True
+
+
+gameInfo = {
+    'cardInfo': [],
+    # "cardInfo(array)" : [
+    #     {"name" : "quicksilver",
+    #        },
+    #     
+    #     ....
+    #     {}
+    # ]
+    'locationInfo': [
+        {'pos' : [locationArea[0], locationArea[3]], 'name' : ''},
+        {'pos' : [locationArea[1], locationArea[3]], 'name' : ''},
+        {'pos' : [locationArea[2], locationArea[3]], 'name' : ''}
+    ],
+    # locationInfo[location[int x, int y] *3]
+    'energy': 0,
+    'turn' : 0
+}
 
 # Specify the path to the file you want to monitor
-from ignore.private import path_to_snap_log # for your usage, comment out the following two lines and replace with: 
-file_path = path_to_snap_log # file_path = '<Local User Folder>/AppData/LocalLow/Second Dinner/SNAP/Player.log'
-follow_file(file_path)
+# for your usage, comment out the following two lines and replace with: 
+# file_path = '<Local User Folder>/AppData/LocalLow/Second Dinner/SNAP/Player.log'
+from ignore.private import path_to_snap_log 
+file_path = path_to_snap_log 
+
+
+follow_file(file_path, gameInfo)
 
 
