@@ -6,14 +6,10 @@ gameInfo(dict){
 }
 
 
-cardInfo(dict){
-  "card(dict)" : {
-    "cardname" : {location: [int x, int y], },
-    ....
-    "cardname" : {}
-  },
-  "location" : {??}
-
+"card(dict)" : {
+  "cardname" : {location: [int x, int y], },
+  ....
+  "cardname" : {}
 }
 
 locationInfo[location[int x, int y] *3]
