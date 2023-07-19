@@ -1,48 +1,18 @@
 GameManager|OnStartGameScene
-Sentinel
-Killmonger
-Shanna
-CreateCustomActionAsync|LoadVfxDef|Start|LocationVfxDefs/RevealOn1.asset|StartOfTurnTrigger
-Sokovia
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/MoonGirl.asset|DiscardCard
-ShangChi
+draw card MistyKnight
+draw card Sunspot
+location revealed: Superflow
+GameManager|OnStartGameScene
+draw card Aero
+draw card Wave
+draw card Cyclops
+location revealed: AuntMays
+draw card Sunspot
+starting turn 1
+GameManager|OnStartGameScene
+draw card ShangChi
+draw card Sentinel
+location revealed: Morag
+draw card Daredevil
+starting turn 1
 1
-CreateCustomActionAsync|LoadVfxDef|Start|LocationVfxDefs/RevealOn2.asset|StartOfTurnTrigger
-CrimsonCosmos
-CreateCustomActionAsync|LoadVfxDef|Start|LocationVfxDefs/RevealOn3.asset|StartOfTurnTrigger
-ScarletWitch
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|DragCardForPlay
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|DragCardForPlay
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|DragCardForPlay
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|DragCardForPlay
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|DragCardForPlay
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|DragCardForPlay
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|DragCardForPlay
-2
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Quinjet.asset|ResolveCardPlayed
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Quinjet.asset|Ongoing
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|ThisCardResolvedTrigger
-Wakanda
-CreateCustomActionAsync|LoadVfxDef|Start|LocationVfxDefs/Wakanda.asset|Ongoing
-KittyPryde
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/ScarletWitch.asset|DragCardForPlay
-3
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/ScarletWitch.asset|ThisCardResolvedTrigger
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/AgentCoulson.asset|ResolveCardPlayed
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/KittyPryde.asset|StartOfTurnTrigger
-Nova
-CreateCustomActionAsync|LoadVfxDef|Start|LocationVfxDefs/DangerRoom.asset|Ongoing
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|DragCardForPlay
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|DragCardForPlay
-4
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sentinel.asset|ThisCardResolvedTrigger
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Nimrod.asset|ResolveCardPlayed
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/KittyPryde.asset|StartOfTurnTrigger
-Sera
-CreateCustomActionAsync|LoadVfxDef|Start|LocationVfxDefs/DangerRoom.asset|Ongoing
-5
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/DevilDinosaur.asset|ResolveCardPlayed
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/DevilDinosaur.asset|Ongoing
-CreateCustomActionAsync|LoadVfxDef|Start|CardVfxDefs/Sera.asset|Ongoing
-Starlord
-CreateCustomActionAsync|LoadVfxDef|Start|LocationVfxDefs/DangerRoom.asset|Ongoing
